@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
 import Categories from './pages/Categories.jsx';
 import Home from './pages/Home.jsx';
+import Offers from './pages/Offers.jsx';
 import './style.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="categories" element={<Categories />} />
-          {/* Puedes agregar más rutas aquí */}
+          <Route path="offers" element={<Offers />} />
         </Route>
       </Routes>
     </BrowserRouter>
