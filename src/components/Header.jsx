@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
@@ -16,10 +16,10 @@ const Header = () => (
     </div>
     <nav>
       <ul className="barra-navegacion">
-        <li><a href="#">INICIO</a></li>
-        <li><a href="#">CATEGORÍAS</a></li>
-        <li><a href="#">OFERTAS</a></li>
-        <li><a href="#">CONTACTO</a></li>
+        <li><Link to="/">INICIO</Link></li>
+        <li><Link to="/categories">CATEGORÍAS</Link></li>
+        <li><Link to="/offers">OFERTAS</Link></li>
+        <li><Link to="/contact">CONTACTO</Link></li>
       </ul>
     </nav>
   </header>
