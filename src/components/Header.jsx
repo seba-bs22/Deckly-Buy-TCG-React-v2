@@ -11,7 +11,9 @@ const Header = () => (
         <button id="search-button">Buscar</button>
       </div>
       <div className="boton-ingresar">
+        <Link to="/login">
         <button id="login-button">Ingresar →</button>
+        </Link>
       </div>
     </div>
     <nav>
