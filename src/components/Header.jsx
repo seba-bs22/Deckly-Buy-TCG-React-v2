@@ -8,9 +8,8 @@ const Header = () => {
   const handleSearch = () => {
     if (query.trim() === "") return;
 
-    navigate("/search", {
-      state: { query }
-    });
+    // Pasamos la query al Search.jsx usando state
+    navigate("/search", { state: { query } });
   };
 
   return (
@@ -24,19 +23,15 @@ const Header = () => {
           <input
             type="text"
             placeholder="BUSCA TU CARTA"
-            id="search-input"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-
-          <button id="search-button" onClick={handleSearch}>
-            Buscar
-          </button>
+          <button onClick={handleSearch}>Buscar</button>
         </div>
 
         <div className="boton-ingresar">
           <Link to="/login">
-            <button id="login-button">Ingresar →</button>
+            <button>Ingresar →</button>
           </Link>
         </div>
       </div>

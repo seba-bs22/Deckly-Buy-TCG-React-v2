@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Card = ({ img, tipo, nombre, descripcion }) => (
+const Card = ({ img, nombre, tipo, descripcion }) => (
   <div className="bloque-carta">
     <div className="carta-img">
       <img src={img} alt={`Carta ${nombre}`} />
