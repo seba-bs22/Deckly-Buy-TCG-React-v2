@@ -1,30 +1,56 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const Header = () => (
-  <header>
-    <div className="bloque-buscador">
-      <div className="logo">
-        <img src="/img/decklybuytcg.png" alt="Logo DecklyBuyTCG" />
+const Header = () => {
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (query.trim() === "") return;
+
+    navigate("/search", {
+      state: { query }
+    });
+  };
+
+  return (
+    <header>
+      <div className="bloque-buscador">
+        <div className="logo">
+          <img src="/img/decklybuytcg.png" alt="Logo DecklyBuyTCG" />
+        </div>
+
+        <div className="buscador">
+          <input
+            type="text"
+            placeholder="BUSCA TU CARTA"
+            id="search-input"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+
+          <button id="search-button" onClick={handleSearch}>
+            Buscar
+          </button>
+        </div>
+
+        <div className="boton-ingresar">
+          <Link to="/login">
+            <button id="login-button">Ingresar →</button>
+          </Link>
+        </div>
       </div>
-      <div className="buscador">
-        <input type="text" placeholder="BUSCA TU CARTA" id="search-input" />
-        <button id="search-button">Buscar</button>
-      </div>
-      <div className="boton-ingresar">
-        <Link to="/login">
-        <button id="login-button">Ingresar →</button>
-        </Link>
-      </div>
-    </div>
-    <nav>
-      <ul className="barra-navegacion">
-        <li><Link to="/">INICIO</Link></li>
-        <li><Link to="/categories">CATEGORÍAS</Link></li>
-        <li><Link to="/offers">OFERTAS</Link></li>
-        <li><Link to="/contact">CONTACTO</Link></li>
-      </ul>
-    </nav>
-  </header>
-);
+
+      <nav>
+        <ul className="barra-navegacion">
+          <li><Link to="/">INICIO</Link></li>
+          <li><Link to="/categories">CATEGORÍAS</Link></li>
+          <li><Link to="/offers">OFERTAS</Link></li>
+          <li><Link to="/contact">CONTACTO</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;
