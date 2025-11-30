@@ -4,14 +4,7 @@ import CategorySection from '../components/CategorySection';
 const categoriesData = {
   pokemon: {
     titulo: 'Mostrando cartas de Pokémon',
-    cartas: [
-      { img: '/img/reshiram.jpg', tipo: 'POKÉMON', nombre: 'Reshiram', descripcion: '(113/114) [Black & White: Base Set]' },
-      { img: '/img/charizard.jpg', tipo: 'POKÉMON', nombre: 'Charizard', descripcion: '(4/102) [Base Set]' },
-      { img: '/img/gardevoir.jpg', tipo: 'POKÉMON', nombre: 'Gardevoir EX', descripcion: '(93/100) [Sandstorm]' },
-      { img: '/img/lucario.jpg', tipo: 'POKÉMON', nombre: 'Lucario', descripcion: '(20/130) [Great Encounters]' },
-      { img: '/img/mewtwo.jpg', tipo: 'POKÉMON', nombre: 'Mewtwo', descripcion: '(10/102) [Base Set]' },
-      { img: '/img/rayquaza.jpg', tipo: 'POKÉMON', nombre: 'Rayquaza EX', descripcion: '(97/107)' }
-    ]
+
   },
   magic: {
     titulo: 'Mostrando cartas de Magic: The Gathering',
@@ -59,11 +52,16 @@ const Categories = () => {
           <section className="programada">
             <h2>Elige tu juego favorito</h2>
           </section>
+
           <section className="bloque-promos">
             {Object.keys(categoriesData).map((key) => (
               <div key={key} className="bloque-carta bloque-carta-categorias">
                 <div className="carta-img">
-                  <img src={`/img/${key}-logo.png`} alt={`Logo ${key}`} className="logo-juego" />
+                  <img
+                    src={`/img/${key}-logo.png`}
+                    alt={`Logo ${key}`}
+                    className="logo-juego"
+                  />
                 </div>
                 <div className="info-carta">
                   <button onClick={() => setSelected(key)}>VER CARTAS</button>
@@ -73,11 +71,13 @@ const Categories = () => {
           </section>
         </>
       )}
+
       {selected && (
         <CategorySection
           id={`seccion-${selected}`}
+          categoria={selected}                 
           titulo={categoriesData[selected].titulo}
-          cartas={categoriesData[selected].cartas}
+          cartas={categoriesData[selected].cartas} 
           onBack={handleBack}
         />
       )}
