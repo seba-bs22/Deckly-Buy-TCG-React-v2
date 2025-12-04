@@ -344,6 +344,34 @@ main h2 {
   color: #fff;
 }
 
+.btn-secundario {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  background-color: #555;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.btn-google {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  background-color: #d31414;
+  border: 1px solid #000;
+  color: #fff;
+}
+
 /* ================================
    BOTÓN VOLVER A CATEGORÍAS
 ================================ */

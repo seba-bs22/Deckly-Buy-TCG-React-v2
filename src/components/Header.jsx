@@ -31,14 +31,14 @@ const Header = () => {
 
         <div className="boton-ingresar">
           <Link to="/login">
-            <button>Ingresar →</button>
+            <button>Cerrar Sesion</button>
           </Link>
         </div>
       </div>
 
       <nav>
         <ul className="barra-navegacion">
-          <li><Link to="/">INICIO</Link></li>
+          <li><Link to="/home">INICIO</Link></li>
           <li><Link to="/categories">CATEGORÍAS</Link></li>
           <li><Link to="/offers">OFERTAS</Link></li>
           <li><Link to="/contact">CONTACTO</Link></li>

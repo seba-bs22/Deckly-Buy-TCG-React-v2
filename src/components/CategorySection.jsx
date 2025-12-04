@@ -10,11 +10,20 @@ export default function CategorySection({ titulo, cartas = [], onBack }) {
   const esPokemon = titulo.toLowerCase().includes("pokémon");
 
   // Inicializar cartas locales (para categorías normales)
+  // Cargar categorías locales (Magic, YuGiOh, Mitos)
   useEffect(() => {
-    if (!esPokemon) {
+    if (esPokemon) return;
+
+    setLoading(true);
+
+    const timer = setTimeout(() => {
       setCards(cartas || []);
-    }
+      setLoading(false);
+    }, 3000);  // 3 seg
+
+    return () => clearTimeout(timer);
   }, [cartas, esPokemon]);
+
 
   // Cargar cartas Pokémon según página
   useEffect(() => {
